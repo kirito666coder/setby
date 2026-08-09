@@ -1,13 +1,16 @@
 'use client';
 
+import { useBreakpoint } from '@/hooks/useBreakpoint';
+import { gsap } from '@/libs/gsap';
+import { useGSAP } from '@gsap/react';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function Cargo() {
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [scale, setScale] = useState(1);
-  const [desiredRadius, setDesiredRadius] = useState(120); // on-screen px, independent of container scale
+  const [desiredRadius, setDesiredRadius] = useState(120);
 
   useEffect(() => {
     const updateRadius = () => {
@@ -22,35 +25,50 @@ export default function Cargo() {
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
 
-    // Because the parent is scaled, convert mouse position
-    // from the scaled coordinate system back to the original one.
     const scaleX = rect.width / e.currentTarget.offsetWidth;
     const scaleY = rect.height / e.currentTarget.offsetHeight;
 
-    setScale(scaleX); // assume uniform scaling (scaleX ≈ scaleY here)
+    setScale(scaleX);
     setMouse({
       x: (e.clientX - rect.left) / scaleX,
       y: (e.clientY - rect.top) / scaleY,
     });
   };
 
-  // Because everything inside the container gets visually multiplied by
-  // the container's own CSS scale, we pre-divide by that scale so the
-  // circle/mask always ends up "desiredRadius" px on screen, regardless
-  // of whether we're at scale-200 (mobile) or scale-97 (desktop).
   const maskRadius = desiredRadius / scale;
   const circleSize = (desiredRadius * 2) / scale;
 
+  const cargoRef = useRef<null | HTMLDivElement>(null);
+
+  const { isTablet } = useBreakpoint();
+
+  const mTop = isTablet ? -80 : -600;
+  const s = isTablet ? 1.8 : 0.8;
+
+  useGSAP(() => {
+    const tl = gsap.timeline();
+    tl.from(cargoRef.current, {
+      marginTop: mTop,
+      duration: 1,
+      ease: 'power2.inOut',
+      delay: 0.5,
+    });
+    tl.from(cargoRef.current, {
+      scale: s,
+      duration: 1,
+      ease: 'power2.inOut',
+    });
+  });
+
   return (
     <div
+      ref={cargoRef}
       className="relative z-20 mt-35 w-screen scale-200 sm:mt-40 md:h-screen md:pr-40 lg:-mt-20 lg:scale-95"
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
-      {/* SECOND IMAGE — exact same position */}
       <div className="relative">
-        {/* SHARP SHADOW — scaled up + offset, sharp edges */}
         <Image
           src="/cargo-white.png"
           alt=""
@@ -61,7 +79,6 @@ export default function Cargo() {
           aria-hidden
         />
 
-        {/* ACTUAL IMAGE on top */}
         <Image
           src="/cargo-white.png"
           alt=""
@@ -71,7 +88,6 @@ export default function Cargo() {
         />
       </div>
 
-      {/* FIRST IMAGE — only revealed inside the circle when hovering */}
       <div
         className="pointer-events-none absolute top-0 left-0 transition-opacity duration-150"
         style={{
@@ -99,7 +115,6 @@ export default function Cargo() {
         />
       </div>
 
-      {/* Circle following cursor */}
       {isHovering && (
         <div
           className="pointer-events-none absolute -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/50"
