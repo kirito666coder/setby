@@ -1,15 +1,35 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
+const roboto = localFont({
+  src: [
+    {
+      path: '../fonts/Roboto-VariableFont_wdth,wght.ttf',
+      weight: '100 900',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/Roboto-Italic-VariableFont_wdth,wght.ttf',
+      weight: '100 900',
+      style: 'italic',
+    },
+  ],
+  variable: '--font-roboto',
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+const titanOne = localFont({
+  src: '../fonts/TitanOne-Regular.ttf',
+  weight: '400',
+  style: 'normal',
+  variable: '--font-titan',
+});
+
+const opsOne = localFont({
+  src: '../fonts/BlackOpsOne-Regular.ttf',
+  weight: '400',
+  style: 'normal',
+  variable: '--font-ops',
 });
 
 export const metadata: Metadata = {
@@ -19,7 +39,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      className={`${roboto.variable} ${titanOne.variable} ${opsOne.variable} h-full antialiased`}
+    >
       <body className="flex min-h-full flex-col">{children}</body>
     </html>
   );

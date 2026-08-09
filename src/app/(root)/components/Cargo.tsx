@@ -43,7 +43,7 @@ export default function Cargo() {
 
   return (
     <div
-      className="relative mt-35 w-screen scale-200 sm:mt-40 md:-mt-20 md:h-screen md:scale-95 md:pr-40"
+      className="relative z-20 mt-35 w-screen scale-200 sm:mt-40 md:h-screen md:pr-40 lg:-mt-20 lg:scale-95"
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
@@ -95,7 +95,7 @@ export default function Cargo() {
           alt=""
           width={2000}
           height={2000}
-          className="ml-[0.3440rem] block scale-111 pt-[0.965rem] md:ml-4.75 md:scale-112 md:pt-10.75 md:pr-38"
+          className="ml-[0.3340rem] block scale-113 pt-[1.111rem] md:ml-4.75 md:scale-112 md:pt-10.75 md:pr-38"
         />
       </div>
 
