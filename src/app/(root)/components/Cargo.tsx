@@ -62,6 +62,7 @@ export default function Cargo() {
 
   return (
     <div
+      id="cargo"
       ref={cargoRef}
       className="relative z-20 mt-35 w-screen scale-200 sm:mt-40 md:h-screen md:pr-40 lg:-mt-20 lg:scale-95"
       onMouseMove={handleMouseMove}
