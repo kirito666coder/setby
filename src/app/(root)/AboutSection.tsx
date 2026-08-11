@@ -4,7 +4,7 @@ import CargoTransparent from './components/CargoTransparent';
 export default function AboutSection() {
   return (
     <div className="-mt-39 md:-mt-49.5">
-      <div className="h-screen w-screen">
+      <div className="w-screen">
         <div className="relative">
           <div className="sticky top-0 z-10 h-0">
             <div
@@ -20,7 +20,7 @@ export default function AboutSection() {
 
           <section id="about" className="z-30 h-screen overflow-hidden">
             <div className="h-39 md:h-49" />
-            <div className="absolute z-30 flex h-[70vh] w-screen flex-col items-center justify-center gap-10 bg-[#FF5C32] text-white">
+            <div className="bg-setby absolute z-30 flex h-[70vh] w-screen flex-col items-center justify-center gap-10 text-white">
               <h4 className="flex h-10 items-center justify-center gap-1 font-semibold uppercase">
                 <svg
                   width="10"
@@ -43,8 +43,8 @@ export default function AboutSection() {
               <Button text="Who we are" color="black" />
             </div>
           </section>
-          <div className="-mt-22 h-screen bg-red-600" />
-          <div className="h-screen bg-blue-600" />
+          <div id="about-2" className="-mt-22 h-screen" />
+          <div id="about-3" className="h-screen bg-blue-600" />
         </div>
       </div>
     </div>

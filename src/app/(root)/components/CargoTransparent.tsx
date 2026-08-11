@@ -25,6 +25,28 @@ export default function CargoTransparent() {
         scrub: true,
       },
     });
+    gsap.to('#cargo-info', {
+      scrollTrigger: {
+        trigger: '#about-2',
+        start: 'bottom bottom',
+        end: '+=300',
+        scrub: true,
+      },
+      scale: 1,
+      opacity: 1,
+    });
+
+    gsap.to('#cargo-info', {
+      scrollTrigger: {
+        trigger: '#about-2',
+        start: 'bottom bottom',
+        end: '+=300',
+        scrub: true,
+      },
+      scale: 1,
+      opacity: 1,
+    });
+
     gsap.to('#hero-cargo', {
       clipPath: 'polygon(0% 0%, 100% 0%, 100% 30%, 0% 30%)',
 
@@ -33,7 +55,6 @@ export default function CargoTransparent() {
         start: 'top top',
         end: '+=500',
         scrub: true,
-        markers: true,
       },
     });
 
@@ -67,6 +88,7 @@ export default function CargoTransparent() {
           aria-hidden
         />
 
+        {/* Main image */}
         <Image
           src="/cargo.png"
           alt=""
@@ -74,6 +96,115 @@ export default function CargoTransparent() {
           height={2000}
           className="relative block origin-top scale-114"
         />
+
+        <div
+          id="cargo-info"
+          className="pointer-events-none absolute inset-0 z-30 scale-80 opacity-0"
+        >
+          <div className="absolute top-[30%] right-[0%]">
+            {/* Info box */}
+            <div className="relative ml-32 border border-black/40 bg-black/5 px-5 py-3 backdrop-blur-sm">
+              <p className="text-[10px] tracking-[0.25em] text-black/50">CARGO SYSTEM</p>
+
+              <p className="mt-1 text-sm font-medium text-black">Precision Engineering</p>
+            </div>
+
+            {/* Connector */}
+            <svg
+              className="absolute top-0 -left-6 h-32 w-40 overflow-visible"
+              viewBox="0 0 160 130"
+              fill="none"
+            >
+              <path
+                d="M0 110 L65 110 L130 35 L160 35"
+                stroke="#FF5C32"
+                strokeOpacity="0.45"
+                strokeWidth="4"
+              />
+
+              {/* image-side dot */}
+              <circle cx="0" cy="110" r="3" fill="#FF5C32" fillOpacity="0.8" />
+
+              {/* box-side dot */}
+              <circle cx="160" cy="35" r="3" fill="#FF5C32" fillOpacity="0.8" />
+            </svg>
+          </div>
+
+          <div className="absolute top-[40%] left-[0%]">
+            <div className="relative mr-32 border border-black/40 bg-black/5 px-5 py-3 backdrop-blur-sm">
+              <p className="text-[10px] tracking-[0.25em] text-black/50">GLOBAL NETWORK</p>
+
+              <p className="mt-1 text-sm font-medium text-black">190+ Countries</p>
+            </div>
+
+            <svg
+              className="absolute top-0 -right-6.25 h-32 w-40 overflow-visible"
+              viewBox="0 0 160 130"
+              fill="none"
+            >
+              <path
+                d="M160 110 L95 110 L30 35 L0 35"
+                stroke="#FF5C32"
+                strokeOpacity="0.45"
+                strokeWidth="4"
+              />
+
+              <circle cx="160" cy="110" r="3" fill="#FF5C32" fillOpacity="0.8" />
+
+              <circle cx="0" cy="35" r="3" fill="#FF5C32" fillOpacity="0.8" />
+            </svg>
+          </div>
+
+          <div className="absolute right-[0%] bottom-[1%]">
+            <div className="bg-blackborder-black/5 relative ml-42 border border-black/40 bg-black/5 px-5 py-3 backdrop-blur-sm">
+              <p className="text-[10px] tracking-[0.25em] text-black/50">CAPACITY</p>
+
+              <p className="mt-1 text-sm font-medium text-black">25M+ Cargo Units</p>
+            </div>
+
+            <svg
+              className="absolute bottom-0 left-0 h-32 w-44 overflow-visible"
+              viewBox="0 0 176 130"
+              fill="none"
+            >
+              <path
+                d="M0 20 L70 20 L135 95 L176 95"
+                stroke="#FF5C32"
+                strokeOpacity="0.45"
+                strokeWidth="4"
+              />
+
+              <circle cx="0" cy="20" r="3" fill="#FF5C32" fillOpacity="0.8" />
+
+              <circle cx="176" cy="95" r="3" fill="#FF5C32" fillOpacity="0.8" />
+            </svg>
+          </div>
+
+          <div className="absolute bottom-[1%] left-[0%]">
+            <div className="relative mr-36 border border-black/40 bg-black/5 px-5 py-3 backdrop-blur-sm">
+              <p className="text-[10px] tracking-[0.25em] text-black/50">RELIABILITY</p>
+
+              <p className="mt-1 text-sm font-medium text-black">99.9% Delivery</p>
+            </div>
+
+            <svg
+              className="absolute -right-6.5 bottom-0 h-32 w-44 overflow-visible"
+              viewBox="0 0 176 130"
+              fill="none"
+            >
+              <path
+                d="M176 20 L105 20 L40 95 L0 95"
+                stroke="#FF5C32"
+                strokeOpacity="0.45"
+                strokeWidth="4"
+              />
+
+              <circle cx="176" cy="20" r="3" fill="#FF5C32" fillOpacity="0.8" />
+
+              <circle cx="0" cy="95" r="3" fill="#FF5C32" fillOpacity="0.8" />
+            </svg>
+          </div>
+        </div>
       </div>
     </div>
   );
