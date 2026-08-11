@@ -41,7 +41,13 @@ export default function HeroSection() {
     <div className="relative">
       <div className="relative">
         <div className="sticky top-0 z-20 h-0">
-          <div className="h-screen overflow-hidden">
+          <div
+            id="hero-cargo"
+            style={{
+              clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+            }}
+            className="h-screen overflow-hidden"
+          >
             <Cargo />
           </div>
         </div>
