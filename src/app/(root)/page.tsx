@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <HeroSection />
       <AboutSection />
-      <div className="h-screen w-screen">0</div>
+      <div className="h-screen w-screen">hh</div>
     </>
   );
 }
