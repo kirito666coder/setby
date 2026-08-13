@@ -36,16 +36,48 @@ export default function CargoTransparent() {
       opacity: 1,
     });
 
-    gsap.to('#cargo-info', {
+    const t = gsap.timeline({
       scrollTrigger: {
-        trigger: '#about-2',
+        trigger: '#about-4',
         start: 'bottom bottom',
-        end: '+=300',
+        end: '+=1200 bottom',
         scrub: true,
+        markers: true,
       },
-      scale: 1,
-      opacity: 1,
     });
+
+    t.to(
+      '#cargo-info',
+      {
+        opacity: 0,
+        duration: 2,
+      },
+      '<',
+    );
+
+    t.to(
+      '#about-main-cargo',
+      {
+        opacity: 0,
+        duration: 2,
+      },
+      '<',
+    );
+    t.to(
+      '#about-logo',
+      {
+        opacity: 1,
+      },
+      '<',
+    );
+
+    t.to(
+      '#about-3, #about-4 , #about-5',
+      {
+        backgroundColor: '#ff5c32',
+      },
+      '<',
+    );
 
     gsap.to('#hero-cargo', {
       clipPath: 'polygon(0% 0%, 100% 0%, 100% 30%, 0% 30%)',
@@ -70,6 +102,34 @@ export default function CargoTransparent() {
       duration: 1,
       ease: 'power2.inOut',
     });
+
+    const at = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#about-5',
+        start: 'top bottom',
+        end: '+=1200 top',
+        scrub: true,
+        markers: true,
+      },
+    });
+
+    at.to(
+      '#about-logo',
+      {
+        xPercent: -1500,
+        scale: 50,
+        opacity: 0,
+      },
+      '<',
+    );
+
+    at.to(
+      ' #about-4 , #about-5',
+      {
+        backgroundColor: '#ffffff',
+      },
+      '<',
+    );
   });
 
   return (
@@ -77,7 +137,7 @@ export default function CargoTransparent() {
       ref={cargoRef}
       className="relative z-20 -mt-10 w-screen scale-200 sm:mt-40 md:h-screen md:pr-40 lg:-mt-35 lg:scale-95"
     >
-      <div className="relative mt-36.75 ml-2.75 md:mt-13 md:ml-7.5">
+      <div id="about-main-cargo" className="relative mt-36.75 ml-2.75 md:mt-13 md:ml-7.5">
         <Image
           src="/cargo.png"
           alt=""
@@ -203,6 +263,35 @@ export default function CargoTransparent() {
 
               <circle cx="0" cy="95" r="3" fill="#FF5C32" fillOpacity="0.8" />
             </svg>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          id="about-logo"
+          className="absolute top-1/2 left-1/2 -translate-1/2 scale-100 opacity-0"
+        >
+          <div className="ml-10 flex h-20 w-50 items-center justify-center">
+            <div
+              className="h-full w-2/5 bg-white"
+              style={{
+                clipPath: 'polygon(0 50%, 100% 0, 100% 50%, 0% 100%)',
+              }}
+            />
+            <div
+              className="h-full w-2/5 bg-black"
+              style={{
+                clipPath: 'polygon(0 50%, 100% 0, 100% 50%, 0% 100%)',
+              }}
+            />
+            <div
+              className="text-setby flex h-full w-3/5 items-end justify-end bg-white text-2xl font-bold"
+              style={{
+                clipPath: 'polygon(50% 0%, 100% 0, 100% 50%, 100% 100%, 0 100%, 0% 50%)',
+              }}
+            >
+              Setby.
+            </div>
           </div>
         </div>
       </div>
