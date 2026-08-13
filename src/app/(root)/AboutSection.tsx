@@ -44,7 +44,20 @@ export default function AboutSection() {
             </div>
           </section>
           <div id="about-2" className="-mt-22 h-screen" />
-          <div id="about-3" className="h-screen bg-blue-600" />
+          <div id="about-3" className="h-screen" />
+          <div id="about-3" className="h-screen" />
+          <div id="about-4" className="h-screen">
+            4
+          </div>
+          <div id="about-4" className="h-screen">
+            5
+          </div>
+          <div id="about-4" className="h-screen">
+            6
+          </div>
+          <div id="about-5" className="h-screen">
+            1
+          </div>
         </div>
       </div>
     </div>
