@@ -4,12 +4,19 @@
   --background: #ffffff;
   --foreground: #000000;
   --setby: #ff5c32;
+  --paper: #e3e6e1;
+  --inx: #12161a;
+  --amber: #ffb020 --steel: #3e5a6b;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-setby: var(--setby);
+  --color-paper: var(--paper);
+  --color-inx: var(--ink);
+  --color-amber: var(--amber);
+  --color-steel: var(--steel);
   --font-sans: var(--font-roboto);
   --font-display: var(--font-titan);
   --font-ops: var(--font-ops);
