@@ -3,7 +3,7 @@ import CargoTransparent from './components/CargoTransparent';
 
 export default function AboutSection() {
   return (
-    <div className="-mt-39 md:-mt-49.5">
+    <div className="bg-paper -mt-39 md:-mt-49.5">
       <div className="w-screen">
         <div className="relative">
           <div className="sticky top-0 z-10 h-0">
@@ -43,21 +43,7 @@ export default function AboutSection() {
               <Button text="Who we are" color="black" />
             </div>
           </section>
-          <div id="about-2" className="-mt-22 h-screen" />
-          <div id="about-3" className="h-screen" />
-          <div id="about-3" className="h-screen" />
-          <div id="about-4" className="h-screen">
-            4
-          </div>
-          <div id="about-4" className="h-screen">
-            5
-          </div>
-          <div id="about-4" className="h-screen">
-            6
-          </div>
-          <div id="about-5" className="h-screen">
-            1
-          </div>
+          <div id="about-2" className="-mt-22 h-[200vh]" />
         </div>
       </div>
     </div>

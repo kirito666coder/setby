@@ -38,7 +38,7 @@ export default function HeroSection() {
     });
   });
   return (
-    <div className="relative">
+    <div className="bg-paper relative">
       <div className="relative">
         <div className="sticky top-0 z-20 h-0">
           <div
