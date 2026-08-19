@@ -29,3 +29,12 @@
     --setby: #ff5c32;
   }
 }
+
+@keyframes scan-sweep {
+  0% {
+    transform: translateY(-2rem);
+  }
+  100% {
+    transform: translateY(18rem);
+  }
+}
