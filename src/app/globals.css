@@ -38,3 +38,12 @@
     transform: translateY(18rem);
   }
 }
+
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
