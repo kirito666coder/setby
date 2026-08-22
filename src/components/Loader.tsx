@@ -17,7 +17,7 @@ export default function Loader({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      <div className="fixed inset-0 z-50 flex h-screen w-screen">
+      <div className="pointer-events-none fixed inset-0 z-50 flex h-screen w-screen">
         <div className="bg-setby h-full w-[5%]" id="Loader" />
         <div className="bg-setby h-full w-[30%]" id="Loader" />
         <div className="bg-setby h-full w-[30%]" id="Loader" />
