@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Setby
+
+Setby is a modern web application built with Next.js, React, and GSAP for animations, styled with Tailwind CSS.
+
+## Demo
+
+**Live Demo URL:** [https://setby.netlify.app/](https://setby.netlify.app/)
+
+![Setby Demo](./public/web.png)
+
+## Technology Stack
+
+- **Framework:** Next.js
+- **UI Library:** React
+- **Animations:** GSAP (GreenSock Animation Platform)
+- **Styling:** Tailwind CSS
+- **Language:** TypeScript
 
 ## Getting Started
 
-First, run the development server:
+To run the development server locally, follow these steps:
+
+1. Clone the repository and navigate into the project directory.
+2. Install the dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Run the development server:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Learn More
+## Scripts
 
-To learn more about Next.js, take a look at the following resources:
+- `pnpm dev`: Starts the development server.
+- `pnpm build`: Builds the application for production.
+- `pnpm start`: Starts the production server.
+- `pnpm lint`: Runs ESLint to check for linting errors.
+- `pnpm format`: Formats code using Prettier.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Code Quality Tools
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- ESLint
+- Prettier
+- Husky
+- lint-staged

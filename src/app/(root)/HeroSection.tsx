@@ -8,31 +8,31 @@ import { gsap } from '@/libs/gsap';
 export default function HeroSection() {
   useGSAP(() => {
     gsap.from('#hero-title', {
-      delay: 1,
+      delay: 2,
       y: 145,
       duration: 2,
     });
 
     gsap.from('#hero-Button', {
       opacity: 0,
-      delay: 1,
+      delay: 2,
       duration: 1,
       scale: 0.7,
     });
     gsap.from('#subTitle', {
       opacity: 0,
-      delay: 1.5,
+      delay: 2.5,
       duration: 1,
     });
     gsap.from('#hero-list', {
       y: 300,
-      delay: 1,
+      delay: 2,
       duration: 1,
       stagger: 0.1,
     });
     gsap.from('#sub-list', {
       opacity: 0,
-      delay: 1.5,
+      delay: 2.5,
       duration: 1,
       stagger: 0.2,
     });

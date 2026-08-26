@@ -51,7 +51,7 @@ export default function Cargo() {
       marginTop: mTop,
       duration: 1,
       ease: 'power2.inOut',
-      delay: 0.5,
+      delay: 1.5,
     });
     tl.from(cargoRef.current, {
       scale: s,
